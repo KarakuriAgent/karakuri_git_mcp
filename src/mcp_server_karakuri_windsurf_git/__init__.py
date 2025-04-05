@@ -8,7 +8,7 @@ from .server import serve
 @click.option("--repository", "-r", type=Path, help="Git repository path")
 @click.option("-v", "--verbose", count=True)
 def main(repository: Path | None, verbose: bool) -> None:
-    """MCP Git Server - Git functionality for MCP"""
+    """MCP Karakuri Windsurf Git Server - Git functionality for MCP with Karakuri Windsurf AI"""
     import asyncio
 
     logging_level = logging.WARN

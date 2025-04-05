@@ -86,8 +86,40 @@ def git_diff(repo: git.Repo, target: str) -> str:
     return repo.git.diff(target)
 
 def git_commit(repo: git.Repo, message: str) -> str:
-    commit = repo.index.commit(message)
-    return f"Changes committed successfully with hash {commit.hexsha}"
+    try:
+        original_committer_name = repo.git.config('--get', 'user.name')
+    except git.GitCommandError:
+        original_committer_name = None
+    
+    try:
+        original_committer_email = repo.git.config('--get', 'user.email')
+    except git.GitCommandError:
+        original_committer_email = None
+    
+    try:
+        author = git.Actor("Karakuri Windsurf AI", "karakuri-windsurf@0235.co.jp")
+        
+        repo.git.config('--local', 'user.name', "Karakuri Windsurf AI")
+        repo.git.config('--local', 'user.email', "karakuri-windsurf@0235.co.jp")
+        
+        commit = repo.index.commit(message, author=author)
+        return f"Changes committed successfully with hash {commit.hexsha}"
+    finally:
+        if original_committer_name:
+            repo.git.config('--local', 'user.name', original_committer_name)
+        else:
+            try:
+                repo.git.config('--local', '--unset', 'user.name')
+            except git.GitCommandError:
+                pass
+            
+        if original_committer_email:
+            repo.git.config('--local', 'user.email', original_committer_email)
+        else:
+            try:
+                repo.git.config('--local', '--unset', 'user.email')
+            except git.GitCommandError:
+                pass
 
 def git_add(repo: git.Repo, files: list[str]) -> str:
     repo.index.add(files)

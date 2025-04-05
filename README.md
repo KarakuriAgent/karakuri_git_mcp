@@ -1,10 +1,10 @@
-# mcp-server-git: A git MCP server
+# mcp-server-karakuri-windsurf-git: A git MCP server by Karakuri Windsurf AI
 
 ## Overview
 
 A Model Context Protocol server for Git repository interaction and automation. This server provides tools to read, search, and manipulate Git repositories via Large Language Models.
 
-Please note that mcp-server-git is currently in early development. The functionality and available tools are subject to change and expansion as we continue to develop and improve the server.
+Please note that mcp-server-karakuri-windsurf-git is currently in early development. The functionality and available tools are subject to change and expansion as we continue to develop and improve the server.
 
 ### Tools
 
@@ -90,20 +90,20 @@ Please note that mcp-server-git is currently in early development. The functiona
 ### Using uv (recommended)
 
 When using [`uv`](https://docs.astral.sh/uv/) no specific installation is needed. We will
-use [`uvx`](https://docs.astral.sh/uv/guides/tools/) to directly run *mcp-server-git*.
+use [`uvx`](https://docs.astral.sh/uv/guides/tools/) to directly run *mcp-server-karakuri-windsurf-git*.
 
 ### Using PIP
 
-Alternatively you can install `mcp-server-git` via pip:
+Alternatively you can install it locally via pip:
 
 ```
-pip install mcp-server-git
+pip install -e /path/to/karakuri_git_mcp
 ```
 
 After installation, you can run it as a script using:
 
 ```
-python -m mcp_server_git
+python -m mcp_server_karakuri_windsurf_git
 ```
 
 ## Configuration
@@ -119,7 +119,7 @@ Add this to your `claude_desktop_config.json`:
 "mcpServers": {
   "git": {
     "command": "uvx",
-    "args": ["mcp-server-git", "--repository", "path/to/git/repo"]
+    "args": ["mcp-server-karakuri-windsurf-git", "--repository", "path/to/git/repo"]
   }
 }
 ```
@@ -147,7 +147,7 @@ Add this to your `claude_desktop_config.json`:
 "mcpServers": {
   "git": {
     "command": "python",
-    "args": ["-m", "mcp_server_git", "--repository", "path/to/git/repo"]
+    "args": ["-m", "mcp_server_karakuri_windsurf_git", "--repository", "path/to/git/repo"]
   }
 }
 ```
@@ -162,10 +162,10 @@ Add to your Zed settings.json:
 
 ```json
 "context_servers": [
-  "mcp-server-git": {
+  "mcp-server-karakuri-windsurf-git": {
     "command": {
       "path": "uvx",
-      "args": ["mcp-server-git"]
+      "args": ["mcp-server-karakuri-windsurf-git"]
     }
   }
 ],
@@ -177,10 +177,10 @@ Add to your Zed settings.json:
 
 ```json
 "context_servers": {
-  "mcp-server-git": {
+  "mcp-server-karakuri-windsurf-git": {
     "command": {
       "path": "python",
-      "args": ["-m", "mcp_server_git"]
+      "args": ["-m", "mcp_server_karakuri_windsurf_git"]
     }
   }
 },
@@ -192,14 +192,14 @@ Add to your Zed settings.json:
 You can use the MCP inspector to debug the server. For uvx installations:
 
 ```
-npx @modelcontextprotocol/inspector uvx mcp-server-git
+npx @modelcontextprotocol/inspector uvx mcp-server-karakuri-windsurf-git
 ```
 
 Or if you've installed the package in a specific directory or are developing on it:
 
 ```
 cd path/to/servers/src/git
-npx @modelcontextprotocol/inspector uv run mcp-server-git
+npx @modelcontextprotocol/inspector uv run mcp-server-karakuri-windsurf-git
 ```
 
 Running `tail -n 20 -f ~/Library/Logs/Claude/mcp*.log` will show the logs from the server and may
@@ -244,7 +244,7 @@ If you are doing local development, there are two ways to test your changes:
       "--directory",
       "/<path to mcp-servers>/mcp-servers/src/git",
       "run",
-      "mcp-server-git"
+      "mcp-server-karakuri-windsurf-git"
     ]
   }
 }

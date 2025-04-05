@@ -1,12 +1,12 @@
 [project]
-name = "mcp-server-git"
+name = "mcp-server-karakuri-windsurf-git"
 version = "0.6.2"
 description = "A Model Context Protocol server providing tools to read, search, and manipulate Git repositories programmatically via LLMs"
 readme = "README.md"
 requires-python = ">=3.10"
-authors = [{ name = "Anthropic, PBC." }]
-maintainers = [{ name = "David Soria Parra", email = "davidsp@anthropic.com" }]
-keywords = ["git", "mcp", "llm", "automation"]
+authors = [{ name = "Karakuri Windsurf AI" }]
+maintainers = [{ name = "Karakuri Windsurf AI", email = "karakuri-windsurf-ai.yamashita@0235.co.jp" }]
+keywords = ["git", "mcp", "llm", "automation", "karakuri-windsurf"]
 license = { text = "MIT" }
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-mcp-server-git = "mcp_server_git:main"
+mcp-server-karakuri-windsurf-git = "mcp_server_karakuri_windsurf_git:main"
 
 [build-system]
 requires = ["hatchling"]
